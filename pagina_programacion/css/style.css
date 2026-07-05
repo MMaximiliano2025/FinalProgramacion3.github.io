@@ -1,0 +1,699 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Pantalla*/
+body {
+    background: #ffffff;
+    color: #222;
+    font-family: 'Montserrat', Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Barra superior */
+.barra-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 32px 60px 0 60px;
+    background: transparent;
+}
+
+/* Logo */
+.logo-rosa {
+    font-size: 2rem;
+    color: #222;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Navegación principal (añadir class="botones" al <nav>) */
+header nav.botones {
+    flex: 1;
+}
+
+nav.botones .flex-navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+nav.botones ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+/* Normalizar listas que usas como menú (evita bullets y columna) */
+section > ul,
+header nav.botones ul,
+nav.botones ul,
+.barra-encabezado nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center; /* centra la barra de botones */
+    flex-wrap: wrap;
+}
+
+/* Items de la lista */
+section > ul li,
+nav.botones ul li {
+    margin: 0;
+}
+
+/* Enlaces como botones en escala de grises */
+section > ul li a,
+nav.botones a,
+nav.botones .sesion a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 12px;
+    background: #f5f5f5;        /* gris claro */
+    color: #1f1f1f;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 6px 18px rgba(31,31,31,0.06);
+    font-weight: 600;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+}
+
+/* Hover / foco */
+section > ul li a:hover,
+nav.botones a:hover,
+nav.botones .sesion a:hover,
+section > ul li a:focus {
+    background: #e0e0e0;
+    color: #080808;
+    box-shadow: 0 10px 26px rgba(31,31,31,0.10);
+    transform: translateY(-3px) scale(1.02);
+    outline: none;
+}
+
+/* Presionado */
+section > ul li a:active {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 0 6px 14px rgba(31,31,31,0.08);
+    background: #d6d6d6;
+}
+
+/* Si quieres la lista alineada a la derecha en alguna página, aplica .alinear-derecha al <ul> */
+.alinear-derecha { justify-content: flex-end; }
+
+/* Secciones y títulos */
+section {
+    width: 100%;
+    padding: 32px 0 16px 0;
+}
+
+section.seccion-juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+section.seccion-juego h1 {
+    align-self: center;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+    margin: 40px 0 30px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin: 30px 0 20px;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+.contenido {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(224,229,236,1);
+    margin: 24px auto;
+    padding: 32px;
+    max-width: 900px;
+    text-align: left;
+}
+
+.juego-contenedor {
+    width: min(90%, 1280px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0;
+    display: block;
+}
+
+.juego-contenedor iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+.galeria-fanarts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    padding: 32px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.elemento-fanart {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(224,229,236,1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px;
+    min-height: 220px;
+    width: 220px;
+    transition: box-shadow 0.2s;
+}
+
+.elemento-fanart:hover {
+    box-shadow: 0 4px 24px rgba(207,216,220,0.8);
+}
+
+.imagen-fanart {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #f5f6fa;
+    box-shadow: 0 2px 8px rgba(224,229,236,1);
+    margin-bottom: 12px;
+}
+
+.autor-fanart {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 4px;
+    text-align: center;
+}
+
+/* Caja de subida / formulario */
+.caja-subida-fanarts {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(224,229,236,1);
+    padding: 32px 24px;
+    max-width: 500px;
+    margin: 32px auto 0 auto;
+    text-align: center;
+}
+
+.caja-subida-fanarts .etiqueta-subida {
+    display: block;
+    font-size: 1.1rem;
+    color: #222;
+    margin-bottom: 18px;
+}
+
+.caja-subida-fanarts .archivo-entrada {
+    display: none;
+}
+
+.boton-subir-personalizado {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #e0e5ec;
+    color: #222;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(224,229,236,1);
+    transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+    margin-bottom: 12px;
+    text-decoration: none;
+}
+
+.boton-subir-personalizado:hover {
+    background: #007aff;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(207,216,220,0.8);
+}
+
+.hero {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+.hero-text {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero .eyebrow {
+    color: #555;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    line-height: 1.05;
+    margin-bottom: 18px;
+}
+
+.hero-text p {
+    color: #4b4b59;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 680px;
+    margin: 0 auto 28px;
+}
+
+.hero-buttons {
+    display: inline-flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.hero-buttons .boton-personalizado.secondary {
+    background: #ffffff;
+    border: 1px solid #e3e3e3;
+    color: #222;
+}
+
+.hero-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.hero-card {
+    background: #f8f9ff;
+    border: 1px solid #e5e8f1;
+    border-radius: 18px;
+    padding: 24px 22px;
+    box-shadow: 0 10px 25px rgba(16, 24, 64, 0.05);
+    text-align: left;
+}
+
+.hero-card h3 {
+    margin: 0 0 12px;
+    font-size: 1.05rem;
+}
+
+.hero-card p {
+    margin: 0;
+    color: #444;
+    line-height: 1.7;
+}
+
+    .indicaciones-subida {
+        font-size: 0.95rem;
+        color: #555;
+        margin-top: 10px;
+        background: #f5f6fa;
+        border-radius: 6px;
+        padding: 8px;
+        display: inline-block;
+    }
+
+/* Caja centrada para formularios de subida */
+.caja-centrada {
+    max-width: 640px;
+    margin: 36px auto;               /* centra horizontalmente y separa verticalmente */
+    background: #ffffff;
+    border: 1px solid #e3e3e3;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 6px 18px rgba(31,31,31,0.06);
+    box-sizing: border-box;
+    text-align: left;                /* mantiene la disposición interna */
+}
+
+/* Inputs dentro de la caja */
+.caja-centrada input[type="text"],
+.caja-centrada .area-archivo {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #e0e5ec;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Contenedor para el input file */
+.area-archivo {
+    background: #fff;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Ocultar el input file original */
+.caja-centrada input[type="file"] {
+    display: none;
+}
+
+.caja-centrada input[type="text"]:focus,
+.caja-centrada input[type="file"]:focus {
+    border-color: #007aff;
+    box-shadow: 0 0 0 3px rgba(0,122,255,0.1);
+    outline: none;
+}
+
+/* Botón submit con el estilo de los botones de navegación */
+.caja-centrada input[type="submit"] {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #f5f5f5;
+    color: #1f1f1f;
+    border: 1px solid #e3e3e3;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(31,31,31,0.06);
+    transition: all 0.18s ease;
+}
+
+.caja-centrada input[type="submit"]:hover {
+    background: #e0e0e0;
+    color: #080808;
+    box-shadow: 0 10px 26px rgba(31,31,31,0.10);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.caja-centrada input[type="submit"]:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(31,31,31,0.08);
+}
+
+/* Responsive grandes pantallas -> tablets */
+@media (max-width: 1024px) {
+    .barra-encabezado {
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px 20px 0 20px;
+    }
+
+    nav.botones ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .contenido {
+        max-width: 95vw;
+        padding: 24px;
+    }
+
+    .galeria-fanarts {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 24px;
+    }
+
+    .caja-subida-fanarts {
+        padding: 24px 16px;
+        max-width: 90vw;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Responsive móviles */
+@media (max-width: 767px) {
+    .barra-encabezado {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 8px;
+    }
+
+    .logo-rosa {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    nav.botones ul {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav.botones a,
+    nav.botones .sesion a {
+        width: 80%;
+        font-size: 0.95rem;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .contenido {
+        padding: 18px;
+        max-width: 95vw;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .galeria-fanarts {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .elemento-fanart {
+        width: 90%;
+        min-height: auto;
+    }
+
+    .imagen-fanart {
+        width: 100%;
+        height: auto;
+    }
+
+    .caja-subida-fanarts {
+        max-width: 90vw;
+        padding: 16px 10px;
+    }
+
+    .boton-subir-personalizado {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+
+    .indicaciones-subida {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+    }
+}
+
+/*Galería Css*/
+.galeria-imagenes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.caja {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    width: 150px;
+}
+
+.caja img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.caja:hover {
+    border-color: #911515;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para los botones personalizados */
+.boton-personalizado {
+    color: #222;
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #e0e5ec;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    padding: 12px 28px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.boton-personalizado:hover {
+    background: #fff;
+    color: #222;
+    box-shadow: 0 4px 16px #e0e5ec;
+    transform: translateY(-2px) scale(1.04);
+}
+
+.contenedor-animacion {
+    width: 600px; /* Ajusta según sea necesario */
+    height: 400px; /* Ajusta según sea necesario */
+    margin: 20px auto; /* Centra el contenedor */
+    background: #fff; /* Fondo blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Estilos específicos para la página de perfil */
+.contenido h1 {
+    text-align: left;
+    margin-bottom: 6px;
+}
+
+.perfil-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 12px 0 20px;
+}
+
+.perfil-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c5cff 0%, #00c2ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(7,20,64,0.08);
+}
+
+/* Si el avatar es una imagen <img>, asegurar recorte circular y cover */
+img.perfil-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 10px 30px rgba(7,20,64,0.08);
+}
+
+/* Mayor especificidad para asegurar que la imagen de perfil quede siempre pequeña y circular */
+.contenido .perfil-header img.perfil-avatar {
+    width: 96px !important;
+    height: 96px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+}
+
+.contenido .perfil-header .perfil-avatar {
+    width: 96px !important;
+    height: 96px !important;
+}
+
+.perfil-usuario-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil-usuario-info .nombre {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.perfil-usuario-info .sub {
+    color: #666;
+    margin-top: 4px;
+}
+
+.perfil-actions {
+    margin-left: auto;
+}
+
+.boton-editar {
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #222;
+    border: 1px solid #e3e8f1;
+    box-shadow: 0 6px 18px rgba(31,31,31,0.05);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.boton-editar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(124,92,255,0.12);
+}
+
+.hero-info .hero-card {
+    text-align: left; /* mantener consistencia en perfil */
+}
+
+/* Ajustes responsivos para perfil */
+@media (max-width: 767px) {
+    .perfil-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .perfil-actions {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .perfil-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 1.6rem;
+    }
+}
